@@ -16,8 +16,7 @@ class EntriesController extends Controller
     }
 
     # Handles "POST /"  request
-    public function postIndex()
-    {
+    public function postIndex() {
         // get form input data
         $entry = [
             'username' => Input::get('frmName'),

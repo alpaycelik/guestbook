@@ -9,34 +9,37 @@
     <title>Laravel Guestbook</title>
 </head>
 <body>
-@foreach($entries as $entry)
-    <p>{{ $entry->comment }}</p>
-    <p>Posted on {{ $entry->created_at->format('M jS, Y') }}  by
-        <a href="mailto:{{ $entry->email }}">{{ $entry->username}}</a>
-    </p><hr />
-@endforeach
-
-<form action="/" method="post" class="form-horizontal registration-form">
+<div class="row justify-content-center ">
+<form action="/" method="post">
     {{ csrf_field() }}
-    <table border="0">
-        <tr>
-            <td>Name</td>
-            <td><input type="text" name="frmName" value="" size="30" maxlength="50"></td>
-        </tr>
-        <tr>
-            <td>Email</td>
-            <td><input type="text" name="frmEmail" value="" size="30" maxlength="100"></td>
-        </tr>
-        <tr>
-            <td>Comment</td>
-            <td><textarea name="frmComment" rows="5" cols="30"></textarea></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td><input type="submit" name="submit" value="submit">
-                <input type="reset" name="reset" value="reset"></td>
-        </tr>
-    </table>
+    <div class="form-group">
+        <label for="frmName">Ad</label>
+        <input type="text" class="form-control" id="frmName" name="frmName" placeholder="Adınızı yazınız">
+    </div>
+    <div class="form-group">
+        <label for="frmEmail">Email</label>
+        <input type="email" class="form-control" id="frmEmail" name="frmEmail" aria-describedby="emailHelp" placeholder="E-mail adresinizi giriniz">
+    </div>
+    <div class="form-group">
+        <label for="frmComment">Yorum</label>
+        <textarea class="form-control" id="frmComment" name="frmComment" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Gönder</button>
+    <button type="reset" class="btn btn-primary">Temizle</button>
 </form>
+</div>
+@foreach($entries as $entry)
+    <div class="card" style="margin:7px 20px">
+        <div class="card-header">
+            {{ $entry->username }}
+        </div>
+        <div class="card-block">
+            <blockquote class="card-blockquote">
+                <p>{{ $entry->comment }}</p>
+                <footer>Posted on {{ $entry->created_at->format('M jS, Y - H:i:s') }}  by <a href="mailto:{{ $entry->email }}">{{ $entry->username}}</a></footer>
+            </blockquote>
+        </div>
+    </div>
+@endforeach
 </body>
 </html>
