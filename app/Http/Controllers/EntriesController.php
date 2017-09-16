@@ -12,7 +12,8 @@ class EntriesController extends Controller
 {
     # Handles "GET /" request
     public function getIndex() {
-        return view('home')->with('entries', Entry::all());
+
+        return view('home')->with('entries', Entry::orderBy('created_at','desc')->get());
     }
 
     # Handles "POST /"  request

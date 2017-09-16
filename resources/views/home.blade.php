@@ -9,7 +9,7 @@
     <title>Laravel Guestbook</title>
 </head>
 <body>
-<div class="row justify-content-center ">
+<div class="row justify-content-center">
 <form action="/" method="post">
     {{ csrf_field() }}
     <div class="form-group">
