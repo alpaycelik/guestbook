@@ -24,21 +24,21 @@
 <form action="/" method="post">
     {{ csrf_field() }}
     <div class="form-group row">
-        <label for="frmName" class="col-sm-2 col-form-label">Ad</label>
+        <label for="ad" class="col-sm-2 col-form-label">Ad</label>
         <div class="col-sm-10">
-        <input type="text" class="form-control" id="frmName" name="frmName" placeholder="Adınızı yazınız">
+        <input type="text" class="form-control" id="ad" name="ad" placeholder="Adınızı yazınız">
         </div>
     </div>
     <div class="form-group row">
-        <label for="frmEmail" class="col-sm-2 col-form-label">Email</label>
+        <label for="e-mail" class="col-sm-2 col-form-label">E-mail</label>
         <div class="col-sm-10">
-        <input type="email" class="form-control" id="frmEmail" name="frmEmail" aria-describedby="emailHelp" placeholder="E-mail adresinizi giriniz">
+        <input type="email" class="form-control" id="e-mail" name="e-mail" aria-describedby="emailHelp" placeholder="E-mail adresinizi giriniz">
         </div>
     </div>
     <div class="form-group row">
-        <label for="frmComment" class="col-sm-2 col-form-label">Yorum</label>
+        <label for="yorum" class="col-sm-2 col-form-label">Yorum</label>
         <div class="col-sm-10">
-        <textarea class="form-control" id="frmComment" name="frmComment" rows="3"></textarea>
+        <textarea class="form-control" id="yorum" name="yorum" rows="3"></textarea>
         </div>
     </div>
     <div class="form-group row">

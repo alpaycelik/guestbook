@@ -20,17 +20,17 @@ class EntriesController extends Controller
     public function postIndex(Request $request) {
 
         $request->validate([
-            'frmName' => 'required',
-            'frmEmail' => 'required',
-            'frmComment' => 'required',
+            'ad' => 'required',
+            'e-mail' => 'required',
+            'yorum' => 'required',
         ]);
 
 
         // get form input data
         $entry = [
-            'username' => Input::get('frmName'),
-            'email'    => Input::get('frmEmail'),
-            'comment'  => Input::get('frmComment')
+            'username' => Input::get('ad'),
+            'email'    => Input::get('e-mail'),
+            'comment'  => Input::get('yorum')
         ];
 
         // save the guestbook entry to the database
