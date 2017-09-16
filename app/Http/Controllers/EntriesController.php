@@ -17,7 +17,15 @@ class EntriesController extends Controller
     }
 
     # Handles "POST /"  request
-    public function postIndex() {
+    public function postIndex(Request $request) {
+
+        $request->validate([
+            'frmName' => 'required',
+            'frmEmail' => 'required',
+            'frmComment' => 'required',
+        ]);
+
+
         // get form input data
         $entry = [
             'username' => Input::get('frmName'),
